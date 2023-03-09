@@ -6,6 +6,12 @@ Aplicação Web simples para gerenciamento de tarefas.
  - Docker (version 20.10.23)
  - Docker Compose (version v2.15.1)
  
+ ## Requisitos Técnicos
+
+- Front-End em **React**;
+- Back-End em **NodeJS**, com **MySQL**;
+- Arquitetura em **camadas**;
+ 
  ## Instalação
  
  1. Clone o repositório para sua máquina
