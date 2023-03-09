@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const connection = mysql.createPool({
-  host: 'mysql_database', /*process.env.DATABASE_HOST as string*/
-  user: 'root', /*process.env.DATABASE_USER as string*/
-  password: 'root', /*process.env.DATABASE_PASSWORD as string */
-  database: 'todolist', /*process.env.DATABASE_NAME as string */
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
 });
 
 export default connection;
