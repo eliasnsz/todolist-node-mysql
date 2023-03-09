@@ -1,11 +1,18 @@
 version: '3'
+
+networks:
+  minharede:
+    driver: bridge
+    
 services:
   db:
-    image: mysql
+    image: mysql:5.7
     container_name: 'mysql_database'
     restart: always
-    expose:
-      - "3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - minharede
     ports:
       - "3306:3306"
     volumes:
@@ -17,8 +24,10 @@ services:
       - '5173:5173'
   backend:
     build: ./backend
+    networks:
+      - minharede
     ports:
-      - "3001:3001"
+      - "5000:5000"
     depends_on:
       - db
 
